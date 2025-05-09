@@ -1,7 +1,7 @@
 dataset:
-  name: KS_Official
+  name: PDE_KS
   pair_id:
-  - 5
+  - 8
 hyperparameters:
   embedding_scaling:
     lower_bound: 0.0001
@@ -32,6 +32,7 @@ model:
   bias: 0
   seed: 0
   data_dim: 1024
-  spinup: 100
+  spinup: 51
   Wr_density: 0.02
   train_split: 0.8
+  n_trials: 3

@@ -1,8 +1,16 @@
 dataset:
-  name: KS_Official
+  name: ODE_Lorenz
   pair_id:
-  - 5
+  - 1
 hyperparameters:
+  leak_rate:
+    lower_bound: 0
+    type: uniform
+    upper_bound: 1
+  bias:
+    lower_bound: 0
+    type: uniform
+    upper_bound: 2
   embedding_scaling:
     lower_bound: 0.0001
     type: loguniform
@@ -19,19 +27,13 @@ hyperparameters:
     lower_bound: 500
     type: randint
     upper_bound: 3000
-  locality:
-    lower_bound: 1
-    type: randint
-    upper_bound: 10
-  chunks: 
-    type: choice
-    choices: [16, 32, 64, 128]
 model:
   name: reservoir
-  leak_rate: 1
-  bias: 0
+  chunks: 1
+  locality: 0
   seed: 0
-  data_dim: 1024
+  data_dim: 3
   spinup: 100
   Wr_density: 0.02
   train_split: 0.8
+  n_trials: 3

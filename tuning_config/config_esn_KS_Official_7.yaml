@@ -35,4 +35,3 @@ model:
   spinup: 15
   Wr_density: 0.02
   train_split: 0.8
-  n_trials: 15
