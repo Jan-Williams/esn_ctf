@@ -66,7 +66,7 @@ def main(config_path: str) -> None:
             train_split = config['model']['train_split']
         else:
             train_split = 0.8
-        train_data, val_data, init_data = load_validation_dataset(dataset_name, pair_id, train_split)
+        train_data, val_data, init_data = load_validation_dataset(dataset_name, pair_id, train_split, transpose=True)
         prediction_timesteps = get_validation_prediction_timesteps(dataset_name, pair_id, train_split)
         prediction_horizon_steps = prediction_timesteps.shape[0]
 
@@ -126,8 +126,6 @@ def main(config_path: str) -> None:
 
 
             train_data = np.swapaxes(train_data, 1,2)
-            print(pair_id)
-            print(train_data.shape)
             val_data = np.swapaxes(val_data, 1,2)
 
             model, R = esn.train_ESN_forecaster(model,
@@ -155,7 +153,7 @@ def main(config_path: str) -> None:
 
         else:
             raise ValueError('Incorect pair_id.')
-        results = evaluate_custom(dataset_name, pair_id, val_data, pred_data)
+        results = evaluate_custom(dataset_name, pair_id, val_data.T, pred_data.T)
 
         # Save results for this sub-dataset and get the path to the results directory
         # results_directory = save_results(dataset_name, model_name, batch_id, pair_id, config, pred_data, results)

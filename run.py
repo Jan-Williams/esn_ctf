@@ -61,7 +61,7 @@ def main(config_path: str) -> None:
     # Process each sub-dataset
     for pair_id in pair_ids:
         # Load sub-dataset
-        train_data, init_data = load_dataset(dataset_name, pair_id)
+        train_data, init_data = load_dataset(dataset_name, pair_id, transpose=True)
         train_data = np.array(train_data)
 
         # # Load initialization matrix if it exists
@@ -131,10 +131,10 @@ def main(config_path: str) -> None:
             raise ValueError('Incorect pair_id.')
 
         # Evaluate predictions using default metrics
-        results = evaluate(dataset_name, pair_id, pred_data)
+        results = evaluate(dataset_name, pair_id, pred_data.T)
 
         # Save results for this sub-dataset and get the path to the results directory
-        results_directory = save_results(dataset_name, model_name, batch_id, pair_id, config, pred_data, results)
+        results_directory = save_results(dataset_name, model_name, batch_id, pair_id, config, pred_data.T, results)
 
         # Append metrics to batch results
         # Convert metric values to plain Python floats for YAML serialization
