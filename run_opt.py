@@ -45,7 +45,7 @@ def main(config_path: str) -> None:
 
     # batch_id = f"batch_"
 
-    batch_id = f"{batch_id}_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    # batch_id = f"{batch_id}_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
     # Initialize batch results dictionary for summary
     batch_results = {
