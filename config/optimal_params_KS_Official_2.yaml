@@ -1,0 +1,18 @@
+dataset:
+  name: PDE_KS
+  pair_id:
+  - 2
+model:
+  Wr_density: 0.02
+  Wr_spectral_radius: 0.7065130355909941
+  beta: 5.414031675397266e-09
+  bias: 0
+  chunks: 16
+  data_dim: 1024
+  embedding_scaling: 0.0001267841381194603
+  leak_rate: 1
+  locality: 3
+  name: reservoir
+  res_dim: 2197
+  seed: 0
+  spinup: 100

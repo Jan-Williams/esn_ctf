@@ -1,5 +1,5 @@
 dataset:
-  name: KS_Official
+  name: PDE_KS
   pair_id:
   - 1
 hyperparameters:
