@@ -1,5 +1,5 @@
 dataset:
-  name: Lorenz_Official
+  name: ODE_Lorenz
   pair_id:
   - 7
 hyperparameters:

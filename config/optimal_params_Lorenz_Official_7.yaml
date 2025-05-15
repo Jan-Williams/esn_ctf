@@ -1,0 +1,18 @@
+dataset:
+  name: ODE_Lorenz
+  pair_id:
+  - 7
+model:
+  Wr_density: 0.02
+  Wr_spectral_radius: 0.7446397552990305
+  beta: 4.519896559648204e-09
+  bias: 0.17842350315095756
+  chunks: 1
+  data_dim: 3
+  embedding_scaling: 0.0212497031205921
+  leak_rate: 0.937271405101472
+  locality: 0
+  name: reservoir
+  res_dim: 689
+  seed: 0
+  spinup: 15
